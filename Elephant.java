@@ -20,6 +20,13 @@ public class Elephant extends Actor
         if(Greenfoot.isKeyDown("right")){
             move(1);
         }
-        removeTouching(Apple.class);
+        eat();
+    }
+    private void eat(){
+        if(isTouching(Apple.class)){
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createApple();
+        }
     }
 }
