@@ -13,10 +13,14 @@ public class MyWorld extends World {
         
         createApple();
     }
+    public void gameOver(){
+        Label gameOverLabel = new Label("Game over", 100);
+        addObject(gameOverLabel,300, 200);
+    }
     public void createApple(){
         Apple apple = new Apple();
         int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(300);
+        int y = 0;
         addObject(apple, x, y);
     }
     public void increaseScore(){
